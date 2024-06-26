@@ -10,20 +10,27 @@ npm install --save @redux-devtools/extension
 https://tailwindcss.com/docs/guides/vite
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p (created tailwind.config.js)
+
 tailwind.config.js (edited)
+
+```javascript
 /** @type {import('tailwindcss').Config} \*/
 export default {
-content: ["./index.html", "./src/**/\*.{js,ts,jsx,tsx}"],
-theme: {
-extend: {},
-},
-plugins: [],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
+```
 
 index.css(edited)
+
+```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
 
 # BACKEND
 
