@@ -2,14 +2,20 @@
 
 # FRONTEND
 
+```bash
 npm create vite
 npm install react-router-dom axios react-icons react-toastify redux react-redux redux-thunk @reduxjs/toolkit @tanstack/react-query
 npm install --save @redux-devtools/extension
+```
 
---- TAILWIND Entegrasyon ---
+## TAILWIND Entegrasyon
+
 https://tailwindcss.com/docs/guides/vite
+
+```bash
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p (created tailwind.config.js)
+```
 
 tailwind.config.js (edited)
 
