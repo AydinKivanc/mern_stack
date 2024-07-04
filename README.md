@@ -50,6 +50,11 @@ JWT_SECRET=...
 
 https://react-icons.github.io/react-icons/
 
+### DEBOUNCE
+
+https://usehooks.com/usedebounce
+npm i @uidotdev/usehooks
+
 # BACKEND
 
 ```bash
