@@ -2,7 +2,9 @@
 [![MERN Stack CRUD Post Sharing App](https://github.com/AydinKivanc/mern_stack/assets/63602100/8cd578fc-07ee-4551-90ce-5fa668ede203
 )](https://github.com/AydinKivanc/mern_stack/assets/63602100/8cd578fc-07ee-4551-90ce-5fa668ede203)
 
-# FRONTEND
+# MERN Stack CRUD Post Sharing App ( Redux Toolkit & Thunk )
+
+## FRONTEND
 
 ```bash
 npm create vite
@@ -57,7 +59,7 @@ https://react-icons.github.io/react-icons/
 https://usehooks.com/usedebounce
 npm i @uidotdev/usehooks
 
-# BACKEND
+## BACKEND
 
 ```bash
 npm init -y
