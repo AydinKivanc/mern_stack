@@ -8,7 +8,7 @@ export const login = createAsyncThunk(
   async (authData, thunkAPI) => {
     thunkAPI.dispatch(authStart())
     try {
-      const response = await api.post("/api/v1/auth/login", authData)
+      const response = await api.post("/auth/login", authData)
       thunkAPI.dispatch(authSuccess(response.data))
       return response.data
     } catch (error) {
@@ -35,7 +35,7 @@ export const register = createAsyncThunk(
   async (authData, thunkAPI) => {
     thunkAPI.dispatch(authStart())
     try {
-      const response = await api.post("/api/v1/auth/register", authData)
+      const response = await api.post("/auth/register", authData)
       thunkAPI.dispatch(authSuccess(response.data))
       return response.data
     } catch (error) {

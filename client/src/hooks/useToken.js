@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 
 const useToken = () => {
-  const [token, setToken] = useState("")
+  const [token, setToken] = useState(null)
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userToken"))
     if (user && user.token) {

@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+const initialState = {
+  user: null,
+  loading: false,
+  error: null,
+  userToken: null,
+}
+
 const authSlice = createSlice({
   name: "auth",
-  initialState: {
-    user: null,
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     authStart(state) {
       state.loading = true
@@ -15,6 +18,7 @@ const authSlice = createSlice({
     authSuccess(state, action) {
       state.loading = false
       state.user = action.payload
+      state.userToken = action.payload
       // Kullanıcı bilgilerini localStorage'a kaydet
       localStorage.setItem("userToken", JSON.stringify(action.payload))
     },
@@ -24,6 +28,7 @@ const authSlice = createSlice({
     },
     logout(state) {
       state.user = null
+      state.userToken = null
       state.loading = false
       state.error = null
       // Kullanıcı bilgilerini localStorage'dan kaldır

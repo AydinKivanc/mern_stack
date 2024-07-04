@@ -8,9 +8,9 @@ const store = configureStore({
 })
 
 // Uygulama başlatıldığında localStorage'dan kullanıcı bilgilerini al
-const user = localStorage.getItem("user")
-if (user) {
-  store.dispatch(authSuccess(JSON.parse(user)))
+const userToken = localStorage.getItem("userToken")
+if (userToken) {
+  store.dispatch(authSuccess(JSON.parse(userToken)))
 }
 export default store
 

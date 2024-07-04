@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault()
     dispatch(register(authData)).then(response => {
       if (!response.error) {
-        navigate("/dashboard")
+        navigate("/")
       }
     })
   }

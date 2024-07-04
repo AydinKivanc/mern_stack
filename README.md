@@ -8,7 +8,7 @@ npm install react-router-dom axios react-icons react-toastify redux react-redux 
 npm install --save @redux-devtools/extension
 ```
 
-## TAILWIND Entegrasyon
+### TAILWIND
 
 https://tailwindcss.com/docs/guides/vite
 
@@ -38,8 +38,22 @@ index.css(edited)
 @tailwind utilities;
 ```
 
+### .env
+
+```js
+PORT=...
+MONGO_URI=mongodb+srv:...
+JWT_SECRET=...
+```
+
+### REACT ICONS
+
+https://react-icons.github.io/react-icons/
+
 # BACKEND
 
+```bash
 npm init -y
 npm install express body-parser cors jsonwebtoken dotenv bcryptjs mongoose
 npm install --save-dev nodemon
+```

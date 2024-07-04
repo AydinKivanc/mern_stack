@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault()
     dispatch(login(authData)).then(response => {
       if (!response.error) {
-        navigate("/dashboard")
+        navigate("/")
       }
     })
   }
@@ -52,7 +52,7 @@ const Login = () => {
       >
         Login
       </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
+      {/* {error && <p className="text-red-500 mt-2">{error}</p>} */}
     </form>
   )
 }
