@@ -14,6 +14,7 @@ const Modal = () => {
     title: "",
     description: "",
   })
+
   useEffect(() => {
     if (currentPost) {
       setPostData(currentPost)
@@ -25,6 +26,24 @@ const Modal = () => {
       })
     }
   }, [currentPost])
+
+  useEffect(() => {
+    const handleEsc = event => {
+      if (event.key === "Escape") {
+        dispatch(setModal({ isOpen: false, currentPost: null }))
+      }
+    }
+
+    if (isOpen) {
+      window.addEventListener("keydown", handleEsc)
+    } else {
+      window.removeEventListener("keydown", handleEsc)
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc)
+    }
+  }, [isOpen, dispatch])
 
   const onChangeFunc = e => {
     setPostData({ ...postData, [e.target.name]: e.target.value })

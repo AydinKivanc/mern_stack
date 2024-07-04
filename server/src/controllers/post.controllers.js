@@ -69,3 +69,16 @@ exports.deletePost = async (req, res) => {
       .json({ message: "Failed to delete post", error: error.message })
   }
 }
+
+// Postları arama
+exports.searchPosts = async (req, res) => {
+  try {
+    const searchTerm = req.query.term
+    const posts = await postService.searchPosts(searchTerm)
+    res.status(200).json(posts)
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to search post", error: error.message })
+  }
+}

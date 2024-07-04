@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import api from "../../services/api"
-import { toast, Bounce } from "react-toastify"
 
 // Tüm postları getirme
 export const fetchAllPosts = createAsyncThunk(
@@ -65,6 +64,19 @@ export const deletePost = createAsyncThunk(
     try {
       await api.delete(`/posts/deletePost/${postId}`)
       return postId
+    } catch (error) {
+      return rejectWithValue(error.response.data)
+    }
+  }
+)
+
+// Arama terimine göre postları getirme
+export const searchPosts = createAsyncThunk(
+  "posts/search",
+  async (searchTerm, { rejectWithValue }) => {
+    try {
+      const response = await api.get(`/posts/search?term=${searchTerm}`)
+      return response.data
     } catch (error) {
       return rejectWithValue(error.response.data)
     }

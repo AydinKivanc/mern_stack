@@ -36,9 +36,11 @@ const HomeCard = ({ post }) => {
     closeConfirmModal()
   }
   return (
-    <div className="relative border p-4 rounded-lg bg-white shadow-md m-2">
-      <div className="font-bold text-lg text-gray-800">{post?.title}</div>
-      <div className="text-gray-600 text-sm mt-2">{post?.description}</div>
+    <div className="relative border p-4 rounded-lg bg-white shadow-md m-2 flex flex-col justify-between h-44">
+      <div>
+        <div className="font-bold text-lg text-gray-800">{post?.title}</div>
+        <div className="text-gray-600 text-sm mt-2">{post?.description}</div>
+      </div>
       <div className="flex items-center justify-between mt-4">
         <span className="text-gray-500 text-xs">{post?.name}</span>
         <span className="text-gray-500 text-xs">
@@ -82,31 +84,6 @@ const HomeCard = ({ post }) => {
       )}
     </div>
   )
-  //(
-  //     <div className="relative border p-4 rounded-lg bg-white shadow-md m-2">
-  //       <div className="font-bold text-lg text-gray-800">{post?.title}</div>
-  //       <div className="text-gray-600 text-sm mt-2">{post?.description}</div>
-  //       <div className="flex items-center justify-between mt-4">
-  //         <span className="text-gray-500 text-xs">{post?.name}</span>
-  //         <span className="text-gray-500 text-xs">
-  //           {new Date(post?.date).toLocaleDateString()}
-  //         </span>
-  //       </div>
-  //       <div className="absolute -top-3 right-0 flex items-center space-x-2">
-  //         <RxUpdate
-  //           size={24}
-  //           //   onClick={() => handleUpdatePost(post._id)}
-  //           onClick={() => handleUpdatePost(post)}
-  //           className="bg-slate-400 hover:bg-slate-600 rounded-full text-white p-1 cursor-pointer transition duration-200"
-  //         />
-  //         <AiOutlineDelete
-  //           size={24}
-  //           onClick={() => handleDeletePost(post._id)}
-  //           className="bg-red-400 hover:bg-red-600 rounded-full text-white p-1 cursor-pointer transition duration-200"
-  //         />
-  //       </div>
-  //     </div>
-  //   )
 }
 
 export default HomeCard

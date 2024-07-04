@@ -5,6 +5,7 @@ import {
   fetchPostById,
   updatePost,
   deletePost,
+  searchPosts,
 } from "./postThunk"
 
 const postSlice = createSlice({
@@ -93,6 +94,21 @@ const postSlice = createSlice({
         state.posts = state.posts.filter(post => post._id !== action.payload)
       })
       .addCase(deletePost.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload
+      })
+
+    // Postları arama
+    builder
+      .addCase(searchPosts.pending, state => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(searchPosts.fulfilled, (state, action) => {
+        state.loading = false
+        state.posts = action.payload
+      })
+      .addCase(searchPosts.rejected, (state, action) => {
         state.loading = false
         state.error = action.payload
       })

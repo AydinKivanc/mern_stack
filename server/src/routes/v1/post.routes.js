@@ -5,6 +5,7 @@ const {
   getAPost,
   updatePost,
   deletePost,
+  searchPosts,
 } = require("../../controllers/post.controllers")
 
 const router = express.Router()
@@ -14,6 +15,7 @@ router.get("/getAPost", getAPost)
 router.post("/create", createPost)
 router.patch("/updatePost/:id", updatePost)
 router.delete("/deletePost/:id", deletePost)
+router.get("/search", searchPosts)
 
 module.exports = router
 

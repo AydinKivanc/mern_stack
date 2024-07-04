@@ -46,3 +46,13 @@ exports.deletePost = async postId => {
     throw new Error("Error deleting post")
   }
 }
+
+// Postları arama
+exports.searchPosts = async searchTerm => {
+  try {
+    const regex = new RegExp(searchTerm, "i")
+    return await Post.find({ title: regex })
+  } catch (error) {
+    throw new Error("Error searching posts")
+  }
+}
